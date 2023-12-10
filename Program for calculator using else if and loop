@@ -1,0 +1,36 @@
+#include <stdio.h>
+void main()
+{
+    char operator;
+    double num1, num2;
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &operator);
+
+    printf("Enter two operands: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    while (operator != 'q') {
+        if (operator == '+') {
+            printf("%.1lf + %.1lf = %.1lf\n", num1, num2, num1 + num2);
+        } else if (operator == '-') {
+            printf("%.1lf - %.1lf = %.1lf\n", num1, num2, num1 - num2);
+        } else if (operator == '*') {
+            printf("%.1lf * %.1lf = %.1lf\n", num1, num2, num1 * num2);
+        } else if (operator == '/') {
+            printf("%.1lf / %.1lf = %.1lf\n", num1, num2, num1 / num2);
+        } else {
+            printf("Invalid operator\n");
+        }
+
+        printf("Enter an operator (+, -, *, /) or q to quit: ");
+        scanf(" %c", &operator);
+
+        if (operator != 'q') {
+            printf("Enter two operands: ");
+            scanf("%lf %lf", &num1, &num2);
+        }
+    }
+
+}
+
